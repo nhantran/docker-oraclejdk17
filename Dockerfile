@@ -12,7 +12,7 @@ RUN apt-get install -y vim
 RUN update-alternatives --set editor /usr/bin/vim.basic
 
 RUN wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/7u72-b14/jdk-7u72-linux-x64.tar.gz"
-RUN tar xvf jdk-7u72-linux-x64.tar.gz && mv jdk1.7.0_72 /opt/jdk
+RUN tar xvf jdk-7u72-linux-x64.tar.gz && mv jdk1.7.0_72 /opt/jdk && rm jdk-7u72-linux-x64.tar.gz
 RUN update-alternatives --install "/usr/bin/java" "java" /opt/jdk/bin/java 1
 RUN update-alternatives --set java /opt/jdk/bin/java
 ENV JAVA_HOME /opt/jdk
